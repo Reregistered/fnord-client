@@ -1,0 +1,15 @@
+{
+    "name": "fnord-client"
+  , "version": "0.0.1"
+  , "description": "Nodejs module to post events to the fnordmetrics server"
+  , "keywords": ["fnordmetrics", "nodejs"]
+  , "repository" :
+	  { "type" : "git"
+	    , "url" : "https://github.com/Reregistered/fnord-client.git"
+	  }
+  , "author": "Dov Amihod "
+  , "dependencies": {
+  }
+  , "main": "index"
+  , "engines": { "node": ">= 0.4.0 < 0.7.0" }
+}
