@@ -11,7 +11,7 @@ _.init = function(params, cb)
 {
   cb = cb || function(){};
 
-  _.db = Redis.createClient(params.rc.port, params.rc.host, params.rc.options);
+  _.db = Redis.createClient(params.redis.port, params.redis.host, params.redis.options);
 
   var onError = function (err) {
     cb(err);
