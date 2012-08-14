@@ -23,3 +23,8 @@ To send an event
   fnord.set_name('username',<session>);
   fnord.set_picture(image_url,<session>);
   fnord.send({_type:<event_type>, url:<event_url>, _session:<session>});
+
+Installation
+============
+
+npm install fnord-client
