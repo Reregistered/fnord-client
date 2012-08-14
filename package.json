@@ -1,6 +1,6 @@
 {
     "name": "fnord-client"
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "description": "Nodejs module to post events to the fnordmetrics server"
   , "keywords": ["fnordmetrics", "nodejs", "client"]
   , "repository" :

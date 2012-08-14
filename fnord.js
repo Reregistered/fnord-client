@@ -26,17 +26,26 @@ _.init = function(params, cb)
 
       var uuid = guid.new();
 
+      if (evnt._session){
+        evnt._session = evnt._session + '_';
+      }
+
       _.db.set(['fnordmetric-event-' + uuid, JSON.stringify(evnt)]);
       _.db.expire(['fnordmetric-event-' + uuid,60]);
       _.db.lpush('fnordmetric-queue', uuid);
 
     };
 
-    _.event = function(eventType, session){
+    _.event = function(eventType, session, eventExtra){
       var evnt = {_type:eventType};
       if (session){
         evnt._session = session;
       }
+
+      for (var itr in eventExtra){
+        evnt[itr] = eventExtra[itr];
+      }
+
       _.send(evnt);
     };
 
@@ -46,7 +55,7 @@ _.init = function(params, cb)
                    url: url};
 
       if (session){
-        event._session = session
+        evnt._session = session
       }
 
       _.send(evnt)
@@ -64,9 +73,9 @@ _.init = function(params, cb)
     }
 
     _.set_picture = function( image_url, session){
-      evnt =  { _type   : "_set_picture",
-                url     : image_url,
-                _session: session };
+      var evnt =  { _type   : "_set_picture",
+                    url     : image_url,
+                    _session: session };
       _.send(evnt)
 
     };
@@ -80,4 +89,3 @@ _.init = function(params, cb)
   _.db.on("connect", onConnect);
 
 };
-
