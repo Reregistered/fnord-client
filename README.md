@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/Reregistered/fnord-client.png)](http://travis-ci.org/Reregistered/fnord-client)
 fnord-client
 ============
 
